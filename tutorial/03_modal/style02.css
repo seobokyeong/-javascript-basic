@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(238, 238, 66);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content {
+  width: 600px;
+  transition: filter 0.5s;
+}
+
+.content.active {
+  filter: blur(20px);
+  transition: filter 0.2s;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0.6em 1.6em;
+  background: #111;
+  color: #fff;
+  text-transform: capitalize;
+  margin-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 400px;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgva(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s top 0.3s;
+}
+
+.modal.active {
+  opacity: 1;
+  top: 50%;
+}
