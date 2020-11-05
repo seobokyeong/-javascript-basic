@@ -115,3 +115,5 @@ function sendMail() {
 }
 
 sendMail()
+
+// https://docs.google.com/spreadsheets/d/1YwEbpmQSJm3r6NMVm4TRtc8lWttvT_Unf2g8K6jjkXw/edit#gid=0
