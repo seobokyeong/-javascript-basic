@@ -1,3 +1,7 @@
+const dimm = document.querySelector('.dimm')
+const modal = document.querySelector('.modal')
+const close = document.querySelector('.close')
+
 function sendMail() {
   // get all data in form and return object
   function getFormData(form) {
@@ -62,6 +66,8 @@ function sendMail() {
     if (data.name === '' || data.email === '' || data.message === '') {
       alert('이름과 이메일, 내용을 확인하세요')
       return
+    } else {
+      dimm.classList.add('active')
     }
 
     // If a honeypot field is filled, assume it was done so by a spam bot.
@@ -79,12 +85,16 @@ function sendMail() {
       if (xhr.readyState === 4 && xhr.status === 200) {
         form.reset()
         //성공후 동작
-        const container = document.querySelector('.container')
-        container.classList.add('active')
+        // const container = document.querySelector('.container')
+        // container.classList.add('active')
+        // const close = document.querySelector('.close')
 
-        const close = document.querySelector('.close')
+        modal.classList.add('active')
+
         close.addEventListener('click', () => {
-          container.classList.remove('active')
+          dimm.classList.remove('active')
+          modal.classList.remove('active')
+          location.reload()
         })
       }
     }
