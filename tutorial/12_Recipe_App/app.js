@@ -22,8 +22,10 @@ function paintRecipe(items) {
           }" "target_blank" class="btn">view Recipe</a>
          </div>
         <p class="food_extra"> Calories : ${item.recipe.calories.toFixed(2)}</p>
-        <p class="food_extra"> DietLabels : ${item.recipe.dietLabels}</p>
-        <p class="food_extra"> HealthLabels : ${item.recipe.healthLabels}</p>
+        <p class="food__extra">Diet Label : ${
+          item.recipe.dietLabels.length > 0 ? item.recipe.dietLabels : 'No-data'
+        }</p>
+        <p class="food_extra"> Health Labels : ${item.recipe.healthLabels}</p>
       </div>
     </div>`
 
